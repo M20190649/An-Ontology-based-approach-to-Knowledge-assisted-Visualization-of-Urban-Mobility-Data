@@ -1,0 +1,61 @@
+\section{Introduction}
+
+Intelligent Transportation Systems and ubiquitous computing generate data that allows one to better understand mobility dynamics of cities. Since the last decade, transportation researchers have developed novel interactive visualization tools to explore spatiotemporal (S-T) urban mobility data. In practical contexts, technical obstacles might still hinder the application of data visualization techniques. Examples of such obstacles include data integration from various sources, often heterogeneous, and definition of appropriate visual encodings and metaphors. Currently, there is a scarcity of visualization tools that aim at reducing the technical burden to transportation analysts (domain users) and facilitating exploratory data analysis (EDA).
+
+Other domains of knowledge attempt to address those obstacles by proposing Knowledge-assisted Visualization Tools (KVT). The typical use case of a KVT begins with the definition of analytical tasks, i.e. questions about data, e.g. ''ridership of stops in downtown area during peak hours''. The tool then suggests one or more candidate visualization techniques based on various information, e.g. structure of analytical tasks, and previous records of users' preferences, profiles and previous ratings given to each technique. We define those records as expert knowledge henceforth. More elaborate tools may iteratively ask for user feedback to improve accuracy of recommendations over time.
+
+Knowledge-assisted visualization tools require a formal knowledge representation (KR) model to describe domain data, visualization techniques, and expert knowledge, with mutually intelligible semantics, i.e. capable of being understood by computers. To the best of our knowledge, the application of KVTs to urban mobility analysis remains unexplored. Existing KR models in transportation, e.g. ontologies, can describe mobility concepts to a certain extent, but cannot fully describe S-T data, such as vehicle trips or ticket validations. Those models also do not provide the necessary constructs for exploring visualization and expert knowledge. We argue that such visualization tools could encourage transportation agencies and stakeholders of growing cities to make frequent use of data visualization. However, it is firstly necessary to build a semantic foundation that serves the purpose of a KVT.
+
+In this article, we show how ontologies and Semantic Web technologies can assist the development of KVTs for S-T urban mobility data. The core contribution is the Visualization-oriented Urban Mobility Ontology (VUMO). Ontologies and Semantic Web technologies have solid open standards and form a powerful approach to problems that involve data integration, including those unrelated to the context of the World Wide Web.
+
+VUMO formalizes the (a) description of S-T instance data in terms of transportation concepts, (b) annotation of visualization techniques' components, e.g. input variables and available interaction tasks, and (c) annotation of expert knowledge. We defined a set of inference rules to extract knowledge from instance data and analytical tasks. Such features can assist, through recommendation algorithms, the identification of appropriate visualization techniques for an analytical task and system users. Within the scope of VUMO, we also introduce a formal definition of compatibility between analytical tasks and visualization techniques.
+
+The structure of VUMO accounts for scalable reusability, i.e. researchers and practitioners can extend the ontology to meet other contexts' requirements. Moreover, the available constructors for annotation of expert knowledge do not constrain the types of recommendation algorithms to be applied, e.g. content-based or collaborative-filtering techniques.
+
+The practical demonstration (refer to Section \ref{sec:practical}) illustrates the tasks (a), (b) and (c), and makes use of data from the public transportation system of Porto (Portugal) and Boston (USA), and expert knowledge from domain users who belong to the same context. The demonstration is supported by two prototypical visualization techniques and an \emph{ad hoc} recommendation algorithm. The discussion about the advantages of a particular type of recommendation algorithm is outside the scope of this article.
+
+Section \ref{sec:relatedwork} surveys the applications of visualization and Semantic Web technologies to some topics of urban mobility analysis. Section \ref{sec:vumo} introduces a formal model for the various facets of a KVT for S-T data, and describes the VUMO ontology, which materializes the aforementioned formal model. Section \ref{sec:practical} provides a practical demonstration of our approach. Section \ref{sec:conclusions} concludes this article and states future research directions.
+
+\section{Related work}
+\label{sec:relatedwork}
+
+
+
+\section{The VUMO Ontology}
+\label{sec:vumo}
+
+This section introduces the structure and constructs of the Visualization-oriented Urban Mobility Ontology, and the underlying formal conceptualization of the data model of a KVT, which the ontology aims to support. VUMO provides a foundational knowledge representation model to support the development of semantically rich, knowledge-assisted visualization systems. Specifically, VUMO allows the following:
+
+\begin{itemize}
+    \item Integration of multi-source heterogeneous data related to spatial events, and their description in terms of transportation network elements;
+    \item Specification of analytical tasks that users want to carry with data in the form of data transformations (queries);
+    \item Annotation of visualization techniques implemented in a visualization system using concepts from Information Visualization theory;
+    \item Inference of implicit knowledge from instance data to support data exploration and visualization, e.g. finding implicit links between instances that come from distinct datasets, extracting characteristics from data transformations, and finding compatible visualization techniques.
+\end{itemize}
+
+VUMO follows a modular structure, i.e. classes and properties where thought with the goal of having a well defined role on the development of a KVT, according to the pipelines we defined:
+
+\begin{enumerate}
+    \item Data integration: after data is described using VUMO constructs, the ontology is able to infer implicit knowledge about instance data, including their visual attributes;
+    \item Visualization technique design and development: a visualization technique should be characterized in terms of its intrinsic attributes. Such attributes are expected to be used by a KVT to evaluate the compatibility of visualization techniques with data transformations, and to aid users on the process of finding appropriate visualization techniques.
+    \item Visualization technique evaluation and specification of system users: empirical user knowledge about visualizatino techniques should be formally represented. The specification of system users allows the definition of their characteristics.
+\end{enumerate}
+
+\subsection{Formalization of the data model of a KVT}
+
+In this section, we propose a formalization for the data model of a KVT, which encompasses three facets: urban mobility data, visualization techniques and empirical knowledge derived from domain users. Such formalization is required to provide common, coherent semantics to the three components that will form a KVT. The resulting model was then materialized into the VUMO ontology.
+
+\section{Practical Applications}
+\label{sec:practical}
+
+\section{Conclusions}
+
+This paper proposed the application of ontologies and Semantic Web technologies to the problem of visualizing heterogeneous S-T urban mobility data. The VUMO ontology, the core contribution, provides a semantic foundation for the development of Knowledge-assisted Visualization Tools, a topic which has not yet been addressed in Transportation literature.
+
+The ontology provides two contributions: it specifies a formal vocabulary for describing spatial events in terms of the components of a public transportation system. Furthermore, vidsualization techniques can be described in terms of its features
+
+We demonstrated practical applications of VUMO using real data from the city of Porto, Portugal. They showed how multiple heterogeneous datasets could be semantically integrated. Prototypical visualization techniques and domain experts were defined to illustrate some of the implications of their characteristics on recommendation results.
+
+As the ontology reaches its first stable version, a comprehensive specification should be published with comprehensive use cases and directions for implementing a basic KVT.
+
+\label{sec:conclusions}
